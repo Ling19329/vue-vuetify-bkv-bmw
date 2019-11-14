@@ -1,32 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <v-app id="inspire">
+      <page-header name="page-header" />
+      <page-content />
+      <page-footer />
+    </v-app>
   </div>
 </template>
-
+<script>
+import PageHeader from "@/views/templates/Header";
+import PageContent from "@/views/templates/Content";
+import PageFooter from "@/views/templates/Footer";
+export default {
+  name: "app",
+  components: {
+    PageHeader,
+    PageContent,
+    PageFooter
+  },
+  mounted() {}
+};
+</script>
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: "Meta Pro", Medium, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.v-application .primary--text {
+    color: #1976d2 !important;
+    caret-color: #1976d2 !important;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
