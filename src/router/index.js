@@ -1,21 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
+
   {
     path: "/",
-    name: "home",
-    component: Home
+    name: "Start",
+    component: function() {
+      return import("../views/Start.vue");
+    }
   },
   {
-    path: "/about",
-    name: "about",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+    path: "/inputDOB",
+    name: "InputDayOfBirthday",
+    component: function() {
+      return import("../views/InputDOB.vue");
+    }
+  },
 ];
 
 const router = new VueRouter({
