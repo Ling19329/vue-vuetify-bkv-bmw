@@ -20,9 +20,9 @@ export default {
 </script>
 <style scoped>
 .higher{
-  margin-top: -50px;
+  margin-top: -10px;
 }
 .higher.with-title{
-  margin-top: -85px;
+  margin-top: -20px;
 }
 </style>
