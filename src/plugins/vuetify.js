@@ -14,7 +14,11 @@ export default new Vuetify({
             error: '#E1100A',
             danger: '#ED706C',
             tertiary: "#035370",
-            content: '#E5F0F3'
+            content: '#E5F0F3',
+            quaternary: '#CAE9F0',
+            quinary: '',
+            senary: ''
+
           },
         },
       },
