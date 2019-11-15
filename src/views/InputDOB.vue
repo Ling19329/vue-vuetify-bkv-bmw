@@ -32,11 +32,14 @@
                             >mdi-information-outline</v-icon
                           >
                         </v-col>
-                        <v-col cols="12" sm="10">
+                        <v-col cols="12" sm="10" class="ml-0 pl-0">
                           <p class="text-left white--text mb-0">
                             <b>Tarife ohne Alterungsrückstellung:</b> Sie zahlen
                             zu Beginn niedrige Beiträge, die mit dem Alter
-                            steigen. <b>MEHR ></b>
+                            steigen. 
+                          </p>
+                          <p class="text-left white--text mb-1">
+                          <b>MEHR ></b>
                           </p>
                         </v-col>
                       </v-layout>
