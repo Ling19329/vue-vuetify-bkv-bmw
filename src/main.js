@@ -6,6 +6,9 @@ import vuetify from './plugins/vuetify';
 import '@babel/polyfill'
 
 Vue.config.productionTip = false;
+import MetaProNormal from './assets/fonts/MetaPro-Normal.ttf';
+
+console.log(MetaProNormal);
 
 new Vue({
   router,

@@ -23,12 +23,14 @@ export default {
 </script>
 <style>
 #app {
-  font-family: "Meta Pro", Medium, Arial, sans-serif!important;
+  font-family: "Meta Pro-Regular", Medium, Arial, sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 
-
+.v-select__selection{
+  font-family: 'Meta Pro-Regular'
+}
 </style>

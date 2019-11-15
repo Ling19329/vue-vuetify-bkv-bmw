@@ -23,7 +23,7 @@
 <script>
 // @ is an alias to /src
 
-import MainPanel from "@/views/templates/MainPanel.vue";
+import MainPanel from "@/components/MainPanel.vue";
 export default {
   name: "Start",
   components: {
