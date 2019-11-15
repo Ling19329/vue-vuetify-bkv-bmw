@@ -13,11 +13,12 @@ export default new Vuetify({
             accent: '#49d586',
             error: '#E1100A',
             danger: '#ED706C',
-            tertiary: "#035370",
             content: '#E5F0F3',
+            tertiary: "#035370",
             quaternary: '#CAE9F0',
-            quinary: '',
-            senary: ''
+            quinary: '#4C9BB0 ',
+            senary: '#3C8085',
+            white: '#fff'
 
           },
         },
