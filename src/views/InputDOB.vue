@@ -28,18 +28,16 @@
                     <v-card class="elevation-0 primary">
                       <v-layout d-flex row wrap>
                         <v-col cols="12" sm="2">
-                          <v-icon color="white" v-on="on"
-                            >mdi-information-outline</v-icon
-                          >
+                          <v-icon color="white">mdi-information-outline</v-icon>
                         </v-col>
                         <v-col cols="12" sm="10" class="ml-0 pl-0">
                           <p class="text-left white--text mb-0">
                             <b>Tarife ohne Alterungsrückstellung:</b> Sie zahlen
                             zu Beginn niedrige Beiträge, die mit dem Alter
-                            steigen. 
+                            steigen.
                           </p>
                           <p class="text-left white--text mb-1">
-                          <b>MEHR ></b>
+                            <b>MEHR ></b>
                           </p>
                         </v-col>
                       </v-layout>
@@ -54,16 +52,23 @@
                         :items="days"
                         label="TT"
                         :rules="[v => !!v || '']"
-                        error
                       ></v-select>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-select :items="months" label="MM" :rules="[v => !!v || '']"></v-select>
+                      <v-select
+                        :items="months"
+                        label="MM"
+                        :rules="[v => !!v || '']"
+                      ></v-select>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-select :items="years" label="JJJJ" :rules="[v => !!v || '']"></v-select>
+                      <v-select
+                        :items="years"
+                        label="JJJJ"
+                        :rules="[v => !!v || '']"
+                      ></v-select>
                     </v-col>
                   </v-layout>
                 </v-form>
@@ -166,8 +171,8 @@ export default {
   methods: {
     onClickStartCalc() {
       if (this.$refs.dobForm.validate()) {
-          console.log('validation is done');
-        }
+        console.log("validation is done");
+      }
     }
   }
 };
