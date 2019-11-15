@@ -11,7 +11,7 @@
               <p
                 :class="[ $vuetify.breakpoint.smAndUp ? 'body-2 px-10' : 'caption']"
               >Ganz einfach Ihre Ergänzungsversicherungen auswählen und online abschließen.</p>
-              <v-btn depressed large color="error" class="mt-4" @click="onClickStart">Jetzt Starten</v-btn>
+              <v-btn depressed large color="danger white--text" class="mt-4" @click="onClickStart">Jetzt Starten</v-btn>
             </template>
           </main-panel>
         </v-col>

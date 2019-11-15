@@ -5,45 +5,82 @@
         <v-col cols="12" md="7" sm="10">
           <main-panel :panelTitle="panelTitle">
             <template v-slot>
-              <div :class="{'px-10': $vuetify.breakpoint.smAndUp}">
+              <div :class="{ 'px-10': $vuetify.breakpoint.smAndUp }">
                 <p
-                  :class="[ $vuetify.breakpoint.smAndUp ? 'subtitle-1' : 'title' ] + ' text-start mb-8'"
+                  :class="
+                    [$vuetify.breakpoint.smAndUp ? 'subtitle-1' : 'title'] +
+                      ' text-start mb-8'
+                  "
                 >
-                  Zur Berechnung Ihres persönlichen Beitrags, benötigen wir ihr Geburtsdatum.
-                  <v-tooltip bottom max-width="300" nudge-top="-5" content-class="primary tooltip-with-top-arrow">
+                  Zur Berechnung Ihres persönlichen Beitrags, benötigen wir ihr
+                  Geburtsdatum.
+                  <v-tooltip
+                    bottom
+                    max-width="300"
+                    nudge-top="-5"
+                    content-class="primary tooltip-with-top-arrow"
+                  >
                     <template v-slot:activator="{ on }">
-                      <v-icon color="primary" v-on="on">mdi-information-outline</v-icon>
+                      <v-icon color="primary" v-on="on"
+                        >mdi-information-outline</v-icon
+                      >
                     </template>
                     <v-card class="elevation-0 primary">
                       <v-layout d-flex row wrap>
                         <v-col cols="12" sm="2">
-                          <v-icon color="white" v-on="on">mdi-information-outline</v-icon>
+                          <v-icon color="white">mdi-information-outline</v-icon>
                         </v-col>
-                        <v-col cols="12" sm="10">
-                          <p
-                            class="text-left white--text mb-0"
-                          ><b>Tarife ohne Alterungsrückstellung:</b> Sie zahlen zu Beginn niedrige Beiträge, die mit dem Alter steigen. <b>MEHR ></b></p>
+                        <v-col cols="12" sm="10" class="ml-0 pl-0">
+                          <p class="text-left white--text mb-0">
+                            <b>Tarife ohne Alterungsrückstellung:</b> Sie zahlen
+                            zu Beginn niedrige Beiträge, die mit dem Alter
+                            steigen.
+                          </p>
+                          <p class="text-left white--text mb-1">
+                            <b>MEHR ></b>
+                          </p>
                         </v-col>
                       </v-layout>
                     </v-card>
                   </v-tooltip>
                 </p>
                 <p class="pb-0 mb-0 mt-4 text-start body-2">Geburtsdatum</p>
-                <v-layout row>
-                  <v-col cols="12" sm="4" xs="12">
-                    <v-select :items="days" label="TT"></v-select>
-                  </v-col>
+                <v-form ref="dobForm">
+                  <v-layout row>
+                    <v-col cols="12" sm="4" xs="12">
+                      <v-select
+                        :items="days"
+                        label="TT"
+                        :rules="[v => !!v || '']"
+                      ></v-select>
+                    </v-col>
 
-                  <v-col cols="12" sm="4" xs="12">
-                    <v-select :items="months" label="MM"></v-select>
-                  </v-col>
+                    <v-col cols="12" sm="4" xs="12">
+                      <v-select
+                        :items="months"
+                        label="MM"
+                        :rules="[v => !!v || '']"
+                      ></v-select>
+                    </v-col>
 
-                  <v-col cols="12" sm="4" xs="12">
-                    <v-select :items="years" label="JJJJ"></v-select>
-                  </v-col>
-                </v-layout>
+                    <v-col cols="12" sm="4" xs="12">
+                      <v-select
+                        :items="years"
+                        label="JJJJ"
+                        :rules="[v => !!v || '']"
+                      ></v-select>
+                    </v-col>
+                  </v-layout>
+                </v-form>
 
-                <v-btn depressed large color="error" class="mt-4">Preise Berechnen</v-btn>
+                <v-btn
+                  depressed
+                  large
+                  color="danger"
+                  class="mt-4 white--text"
+                  @click="onClickStartCalc"
+                  >Preise Berechnen</v-btn
+                >
               </div>
             </template>
           </main-panel>
@@ -130,6 +167,13 @@ export default {
         "2025"
       ]
     };
+  },
+  methods: {
+    onClickStartCalc() {
+      if (this.$refs.dobForm.validate()) {
+        console.log("validation is done");
+      }
+    }
   }
 };
 </script>
@@ -141,7 +185,7 @@ export default {
 
 .tooltip-with-top-arrow {
   border-radius: unset;
-  opacity: 1!important;
+  opacity: 1 !important;
   &::before {
     content: "";
     position: absolute;
@@ -151,7 +195,7 @@ export default {
     top: 0;
     border: 15px solid transparent;
     border-top: 0;
-    border-bottom: 15px solid #00718F;
+    border-bottom: 15px solid #00718f;
     transform: translate(-50%, calc(-100% + 5px));
   }
 }

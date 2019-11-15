@@ -10,6 +10,9 @@
       </v-btn>
 
       </v-app-bar>
+      <template>
+        <v-progress-linear value="15" color="quaternary"></v-progress-linear>
+      </template>
   </div>
 </template>
 

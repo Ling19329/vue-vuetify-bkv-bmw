@@ -19,6 +19,13 @@ const routes = [
       return import("../views/InputDOB.vue");
     }
   },
+  {
+    path: "/dashboard",
+    name: "Dashboard",
+    component: function() {
+      return import("../views/Dashboard.vue");
+    }
+  },
 ];
 
 const router = new VueRouter({
