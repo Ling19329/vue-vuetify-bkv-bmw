@@ -21,7 +21,7 @@ export default {
   mounted() {}
 };
 </script>
-<style>
+<style lang="scss">
 #app {
   font-family: "Meta Pro-Regular", Medium, Arial, sans-serif!important;
   -webkit-font-smoothing: antialiased;
@@ -30,7 +30,4 @@ export default {
   color: #2c3e50;
 }
 
-.v-select__selection{
-  font-family: 'Meta Pro-Regular'
-}
 </style>

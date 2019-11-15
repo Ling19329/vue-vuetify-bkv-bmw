@@ -46,29 +46,20 @@
                 </p>
                 <p class="pb-0 mb-0 mt-4 text-start body-2">Geburtsdatum</p>
                 <v-form ref="dobForm">
-                  <v-layout row>
+                  <v-layout row class="dob-form">
                     <v-col cols="12" sm="4" xs="12">
-                      <v-select
-                        :items="days"
-                        label="TT"
-                        :rules="[v => !!v || '']"
-                      ></v-select>
+                      <v-text-field label="TT" :rules="[v => '']">
+                      </v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-select
-                        :items="months"
-                        label="MM"
-                        :rules="[v => !!v || '']"
-                      ></v-select>
+                      <v-text-field label="MM" :rules="[v => '']">
+                      </v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-select
-                        :items="years"
-                        label="JJJJ"
-                        :rules="[v => !!v || '']"
-                      ></v-select>
+                      <v-text-field label="JJJJ" :rules="[v => '']">
+                      </v-text-field>
                     </v-col>
                   </v-layout>
                 </v-form>
@@ -102,70 +93,70 @@ export default {
   data() {
     return {
       panelTitle: "Mein Geburtsdatum",
-      days: [
-        "01",
-        "02",
-        "04",
-        "05",
-        "06",
-        "07",
-        "08",
-        "09",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30",
-        "31"
-      ],
-      months: [
-        "01",
-        "02",
-        "03",
-        "04",
-        "05",
-        "06",
-        "07",
-        "08",
-        "09",
-        "10",
-        "11",
-        "12"
-      ],
-      years: [
-        "2010",
-        "2011",
-        "2012",
-        "2013",
-        "2014",
-        "2015",
-        "2016",
-        "2017",
-        "2018",
-        "2019",
-        "2020",
-        "2021",
-        "2022",
-        "2023",
-        "2024",
-        "2025"
-      ]
+      // days: [
+      //   "01",
+      //   "02",
+      //   "04",
+      //   "05",
+      //   "06",
+      //   "07",
+      //   "08",
+      //   "09",
+      //   "10",
+      //   "11",
+      //   "12",
+      //   "13",
+      //   "14",
+      //   "15",
+      //   "16",
+      //   "17",
+      //   "18",
+      //   "19",
+      //   "20",
+      //   "21",
+      //   "22",
+      //   "23",
+      //   "24",
+      //   "25",
+      //   "26",
+      //   "27",
+      //   "28",
+      //   "29",
+      //   "30",
+      //   "31"
+      // ],
+      // months: [
+      //   "01",
+      //   "02",
+      //   "03",
+      //   "04",
+      //   "05",
+      //   "06",
+      //   "07",
+      //   "08",
+      //   "09",
+      //   "10",
+      //   "11",
+      //   "12"
+      // ],
+      // years: [
+      //   "2010",
+      //   "2011",
+      //   "2012",
+      //   "2013",
+      //   "2014",
+      //   "2015",
+      //   "2016",
+      //   "2017",
+      //   "2018",
+      //   "2019",
+      //   "2020",
+      //   "2021",
+      //   "2022",
+      //   "2023",
+      //   "2024",
+      //   "2025"
+      // ]
     };
   },
   methods: {
@@ -179,8 +170,25 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~@/assets/scss/main.scss";
+
+.dob-form {
+  & /deep/ .v-text-field__slot {
+    input {
+      font-family: "MetaPro-Normal";
+      color: #00718f !important;
+    }
+  }
+}
 .v-select__selection {
-  font-family: "MetaProRegular";
+  font-family: "MetaPro-Normal";
+  color: #00718f;
+}
+
+.v-label {
+  &.v-label--active {
+    display: none;
+  }
 }
 
 .tooltip-with-top-arrow {
