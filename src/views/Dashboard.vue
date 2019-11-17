@@ -6,25 +6,13 @@
           <v-col cols="12" sm="6">
             <h2>Ihre betriebliche Gesundheitsförderung</h2>
             <p class="pb-0 mb-0 mt-4 text-start caption">Geburtsdatum</p>
-            <v-select
-              class="mt-0 pt-0"
-              :items="days"
-              v-model="days[0]"
-              :rules="[v => !!v || '']"
-            ></v-select>
+            <v-select class="mt-0 pt-0" :items="days" v-model="days[0]" :rules="[v => !!v || '']"></v-select>
           </v-col>
         </v-row>
 
         <v-row justify="center">
-          <v-col
-            cols="12"
-            md="3"
-            sm="6"
-            xs="12"
-            v-for="(panel, index) in panelData"
-            :key="index"
-          >
-            <product-panel
+          <v-col cols="12" md="3" sm="6" xs="12" v-for="(panel, index) in panelData" :key="index">
+            <plan-panel
               :id="panel.id"
               :panelBackground="panel.panelBackground"
               :panelTitle="panel.panelTitle"
@@ -32,9 +20,54 @@
               :panelFeature="panel.panelFeature"
               :checked="panel.checked"
               :checkPanel="selectPanels"
-            >
-              <div>slot content</div>
-            </product-panel>
+            ></plan-panel>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="12" md="3" sm="6" xs="12">
+            <rate-selection-panel
+              :id="0"
+              panelBackground="white"
+              panelTitle="S1 - 1-Bett-Zimmer"
+              :haveRadioOption="true"
+              :checked="true"
+              :checkRate="selectPanels"
+              :panelRate = "3.54" 
+              :isTop="true"
+            ></rate-selection-panel>
+          </v-col>
+          <v-col cols="12" md="3" sm="6" xs="12">
+            <rate-selection-panel
+              :id="0"
+              panelBackground="white"
+              panelTitle="hello"
+              :haveRadioOption="true"
+              :checked="true"
+              :checkRate="selectPanels"
+              :panelRate = "3.54" 
+            ></rate-selection-panel>
+          </v-col>
+          <v-col cols="12" md="3" sm="6" xs="12">
+            <rate-selection-panel
+              :id="0"
+              panelBackground="white"
+              panelTitle="hello"
+              :haveRadioOption="true"
+              :checked="true"
+              :checkRate="selectPanels"
+              :panelRate = "3.54" 
+            ></rate-selection-panel>
+          </v-col>
+          <v-col cols="12" md="3" sm="6" xs="12">
+            <rate-selection-panel
+              :id="0"
+              panelBackground="white"
+              panelTitle="hello"
+              :haveRadioOption="true"
+              :checked="true"
+              :checkRate="selectRatePanel"
+              :panelRate = "3.54" 
+            ></rate-selection-panel>
           </v-col>
         </v-row>
       </v-layout>
@@ -44,11 +77,13 @@
 </template>
 
 <script>
-import ProductPanel from "@/components/ProductPanel.vue";
+import PlanPanel from "@/components/PlanPanel.vue";
+import RateSelectionPanel from "@/components/RateSelectionPanel.vue";
 export default {
   name: "Dashboard",
   components: {
-    ProductPanel
+    PlanPanel,
+    RateSelectionPanel
   },
   props: {},
   data() {
@@ -79,7 +114,7 @@ export default {
             "Prof. Zahnreinigung 150€/Jahr"
           ],
           panelBackground: "quinary",
-          checked: false,
+          checked: false
         },
         {
           id: 2,
@@ -111,14 +146,16 @@ export default {
     };
   },
   methods: {
-    selectPanels(id){
-      this.panelData[id].checked = !this.panelData[id].checked; 
-      console.log('panelData', this.panelData);
+    selectPanels(id) {
+      this.panelData[id].checked = !this.panelData[id].checked;
+      console.log("panelData", this.panelData);
+    },
+    selectRatePanel(id) {
+      console.log("panelData", id);
     }
   },
   mounted() {}
 };
 </script>
 <style scoped lang="scss">
-
 </style>

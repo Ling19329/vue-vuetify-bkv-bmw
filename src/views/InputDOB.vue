@@ -21,9 +21,7 @@
                     content-class="primary tooltip-with-top-arrow"
                   >
                     <template v-slot:activator="{ on }">
-                      <v-icon color="primary" v-on="on"
-                        >mdi-information-outline</v-icon
-                      >
+                      <v-icon color="primary" v-on="on">mdi-information-outline</v-icon>
                     </template>
                     <v-card class="elevation-0 primary">
                       <v-layout d-flex row wrap>
@@ -48,18 +46,15 @@
                 <v-form ref="dobForm">
                   <v-layout row class="dob-form">
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="TT" :rules="[v => ( !!v && v.length < 3) || '']" >
-                      </v-text-field>
+                      <v-text-field label="TT" :rules="[v => ( !!v && v.length < 3) || '']"></v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="MM" :rules="[v => ( !!v && v.length < 3) || '']">
-                      </v-text-field>
+                      <v-text-field label="MM" :rules="[v => ( !!v && v.length < 3) || '']"></v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="JJJJ" :rules="[v => ( !!v && v.length < 5) || '']">
-                      </v-text-field>
+                      <v-text-field label="JJJJ" :rules="[v => ( !!v && v.length < 5) || '']"></v-text-field>
                     </v-col>
                   </v-layout>
                 </v-form>
@@ -70,8 +65,7 @@
                   color="danger"
                   class="mt-4 white--text"
                   @click="onClickStartCalc"
-                  >Preise Berechnen</v-btn
-                >
+                >Preise Berechnen</v-btn>
               </div>
             </template>
           </main-panel>
@@ -92,7 +86,7 @@ export default {
   },
   data() {
     return {
-      panelTitle: "Mein Geburtsdatum",
+      panelTitle: "Mein Geburtsdatum"
       // days: [
       //   "01",
       //   "02",
