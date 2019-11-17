@@ -46,4 +46,14 @@ export default {
     transform: translate(-50%, calc(-100% + 5px));
   }
 }
+
+.btn-link{
+  margin-left: -15px;
+  &:hover::before{
+    background: transparent!important;
+  }
+  &::before{
+    background: transparent!important;
+  }
+}
 </style>
