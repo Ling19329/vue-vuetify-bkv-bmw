@@ -48,17 +48,17 @@
                 <v-form ref="dobForm">
                   <v-layout row class="dob-form">
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="TT" :rules="[v => '']">
+                      <v-text-field label="TT" :rules="[v => ( !!v && v.length < 3) || '']" >
                       </v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="MM" :rules="[v => '']">
+                      <v-text-field label="MM" :rules="[v => ( !!v && v.length < 3) || '']">
                       </v-text-field>
                     </v-col>
 
                     <v-col cols="12" sm="4" xs="12">
-                      <v-text-field label="JJJJ" :rules="[v => '']">
+                      <v-text-field label="JJJJ" :rules="[v => ( !!v && v.length < 5) || '']">
                       </v-text-field>
                     </v-col>
                   </v-layout>
@@ -162,7 +162,7 @@ export default {
   methods: {
     onClickStartCalc() {
       if (this.$refs.dobForm.validate()) {
-        console.log("validation is done");
+        this.$router.push({ name: "Dashboard" });
       }
     }
   }
@@ -171,18 +171,14 @@ export default {
 
 <style lang="scss">
 @import "~@/assets/scss/main.scss";
-
 .dob-form {
   & /deep/ .v-text-field__slot {
     input {
       font-family: "MetaPro-Normal";
       color: #00718f !important;
+      font-size: 1.2em;
     }
   }
-}
-.v-select__selection {
-  font-family: "MetaPro-Normal";
-  color: #00718f;
 }
 
 .v-label {

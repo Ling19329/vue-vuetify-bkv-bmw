@@ -16,6 +16,10 @@ export default {
     }
 }
 </script>
-<style scoped>
-
+<style lang="scss">
+// @import "~@/assets/scss/main.scss";
+// .v-select__selection {
+//   font-family: "MetaPro-Normal";
+//   color: #00718f;
+// }
 </style>

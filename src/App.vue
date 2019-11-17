@@ -23,7 +23,7 @@ export default {
 </script>
 <style lang="scss">
 #app {
-  font-family: "Meta Pro-Regular", Medium, Arial, sans-serif!important;
+  font-family: "MetaPro-Normal", Medium, Arial, sans-serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -5,7 +5,7 @@
         <p class="mb-1 subtitle text-left pl-2 pt-1 white--text">{{ panelTitle }}</p>
         <v-spacer></v-spacer>
         <v-btn class="mr-1 white close-icon elevation-0 px-0" @click="onClickCheckPanel">
-          <v-icon large color="primary" v-if="panelChecked">mdi-close</v-icon>
+          <v-icon large :color="panelBackground" v-if="panelChecked">mdi-close</v-icon>
         </v-btn>
       </v-row>
     </v-layout>
@@ -24,16 +24,16 @@
         class="white mt-4 btn-info white--text elevation-0 py-2"
         >INFOBROSCHÜRE
         <v-icon class="white--text ml-4">
-          mdi-download
+          mdi-arrow-collapse-down
         </v-icon>
       </v-btn>
     </div>
 
     <v-btn icon class="plus-icon" @click="descriptionCollapsed = !descriptionCollapsed">
-      <v-icon large class="primary--text" v-if="!descriptionCollapsed">
+      <v-icon large :class="`${panelBackground}`+ '--text'" v-if="!descriptionCollapsed">
         mdi-plus-circle-outline
       </v-icon>
-      <v-icon large class="primary--text" v-if="descriptionCollapsed">
+      <v-icon large :class="`${panelBackground}`+ '--text'" v-if="descriptionCollapsed">
         mdi-minus-circle-outline
       </v-icon>
     </v-btn>
@@ -65,17 +65,16 @@ export default {
   },
   watch: {
     checked: function(newVal){
-      console.log('checked panel is called on child');
       this.panelChecked = newVal;
     }
   },
   created(){
-    console.log('props', this.$props);
     this.panelChecked = this.$props.checked;
   }
 };
 </script>
 <style scoped lang="scss">
+
 .close-icon {
   height: 30px !important;
   min-height: 30px !important;
