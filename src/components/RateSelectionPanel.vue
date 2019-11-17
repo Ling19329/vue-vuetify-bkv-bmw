@@ -9,16 +9,16 @@
         </div>
       </v-row>
     </v-layout>
-    <div class="white--text caption text-left" v-if="haveRadioOption">
+    <div class="white--text caption text-left">
       <v-layout>
         <v-row wrap>
           <v-col cols="12" sm="3" class="mt-0 pt-0">
-            <v-radio-group v-model="panelSelected" :mandatory="false" class="mt-0 pl-4" color="primary" hide-details>
+            <v-radio-group v-model="panelSelected" :mandatory="false" class="mt-0 pl-4" color="primary" hide-details v-if="haveRadioOption">
               <v-radio value="radio-1" active-class="rd-rate" hide-details></v-radio>
             </v-radio-group>
           </v-col>
           <v-col cols="12" sm="6" class="text-center pt-0 mt-1">
-            <span class="subtitle-1 grey--text text--darken-3" >{{panelRate.toString() + ' € mtl.'}}</span>
+            <span class="subtitle-1 grey--text text--darken-3" >{{panelRate + ' € mtl.'}}</span>
           </v-col>
         </v-row>
       </v-layout>
@@ -35,19 +35,21 @@ export default {
     panelTitle: String,
     haveRadioOption: Boolean,
     panelBackground: String,
-    panelRate: Number,
+    panelRate: String,
     checked: Boolean,
     checkRate: Function,
     isTop: Boolean
   },
   data() {
     return {
-      panelSelected: "radio-1"
+      panelSelected: null
     };
   },
   methods: {},
   watch: {},
-  created() {}
+  created() {
+    this.panelSelected = this.$props.checked? 'radio-1': null;
+  }
 };
 </script>
 <style scoped lang="scss">

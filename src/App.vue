@@ -30,4 +30,20 @@ export default {
   color: #2c3e50;
 }
 
+.tooltip-with-top-arrow {
+  border-radius: unset;
+  opacity: 1 !important;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    left: 50%;
+    top: 0;
+    border: 15px solid transparent;
+    border-top: 0;
+    border-bottom: 15px solid #00718f;
+    transform: translate(-50%, calc(-100% + 5px));
+  }
+}
 </style>
